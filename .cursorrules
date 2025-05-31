@@ -1,0 +1,139 @@
+# Cursor Rules for Musician Next.js Website
+
+## Project Overview
+Building a musician's website using Next.js 14+ with App Router, optimized for Vercel's free tier.
+
+## Core Technologies & Constraints
+- **Framework**: Next.js 14+ with App Router
+- **Styling**: Tailwind CSS for responsive design
+- **Deployment**: Vercel free tier (must stay within limits)
+- **Database**: Use file-based solutions or free-tier databases (Vercel Postgres free tier)
+- **Images**: Next.js Image component with optimization
+- **Audio**: HTML5 audio elements or embedded players (Spotify, SoundCloud)
+
+## Vercel Free Tier Optimization Rules
+1. **Bundle Size**: Keep total bundle under 50MB
+2. **Functions**: Limit serverless functions, prefer static generation
+3. **Build Time**: Optimize for builds under 10 minutes
+4. **Bandwidth**: Implement image optimization and lazy loading
+5. **Database**: Use Vercel Postgres free tier (60 hours compute time/month) sparingly
+
+## Development Guidelines
+
+### File Structure
+```
+/app
+  /globals.css
+  /layout.tsx
+  /page.tsx
+  /about/page.tsx
+  /music/page.tsx
+  /shows/page.tsx
+  /contact/page.tsx
+/components
+  /ui (shadcn/ui components)
+  /sections (Hero, About, Music, etc.)
+/lib
+  /utils.ts
+  /data.ts (static data)
+/public
+  /images
+  /audio (if hosting locally)
+```
+
+### Code Quality Standards
+1. **TypeScript**: Use TypeScript for all components and pages
+2. **Components**: Create reusable, accessible components
+3. **SEO**: Implement proper metadata, Open Graph tags, and structured data
+4. **Performance**: Use Next.js Image, dynamic imports, and proper caching
+5. **Mobile-First**: Design for mobile devices first, then desktop
+
+### Musician Website Requirements
+1. **Hero Section**: Compelling header with latest music/video
+2. **About Section**: Artist bio and professional photos
+3. **Music Section**: Discography, streaming links, embedded players
+4. **Shows/Events**: Upcoming concerts and tour dates
+5. **Contact**: Social media links, booking information
+6. **Gallery**: Photo gallery from performances
+7. **News/Blog**: Latest updates and announcements (optional)
+
+### Technical Implementation Rules
+
+#### Images & Media
+- Always use Next.js Image component with proper alt text
+- Implement lazy loading for all media
+- Use WebP format when possible
+- Compress images before upload (max 800KB per image)
+- Use placeholder blur effects for better UX
+
+#### Audio Integration
+- Prefer embedded players (Spotify, Apple Music, SoundCloud) over self-hosted
+- If self-hosting audio, use compressed formats (MP3, AAC)
+- Implement audio controls with accessibility features
+- Show loading states for audio content
+
+#### Performance Optimization
+- Use static generation (SSG) for all pages when possible
+- Implement proper caching headers
+- Minimize client-side JavaScript
+- Use CSS-in-JS sparingly, prefer Tailwind utilities
+- Implement proper loading states and skeletons
+
+#### SEO & Accessibility
+- Include proper meta titles and descriptions for each page
+- Implement structured data for artist/musician schema
+- Ensure keyboard navigation works throughout
+- Use semantic HTML elements
+- Implement proper heading hierarchy (h1 → h6)
+- Add alt text for all images
+- Ensure color contrast meets WCAG guidelines
+
+### Styling Guidelines
+- Use Tailwind CSS utility classes
+- Implement dark/light mode toggle
+- Use CSS Grid and Flexbox for layouts
+- Implement smooth animations with Framer Motion (lightweight usage)
+- Create consistent spacing and typography scales
+- Use CSS custom properties for theme variables
+
+### Data Management
+- Use static JSON files for band member info, discography, tour dates
+- Implement content management through static files or headless CMS (free tier)
+- Cache external API calls (Spotify, social media) when possible
+- Use React Query for data fetching if needed
+
+### Deployment & Environment
+- Configure proper environment variables
+- Set up proper redirects in vercel.json if needed
+- Implement proper error boundaries
+- Use Next.js built-in analytics or Vercel Analytics (free tier)
+- Configure proper headers for security and performance
+
+### Security Best Practices
+- Sanitize any user inputs (contact forms)
+- Use environment variables for sensitive data
+- Implement proper CORS policies
+- Use HTTPS only (Vercel provides this automatically)
+
+## Component Examples to Prioritize
+1. **AudioPlayer**: Custom audio component with controls
+2. **EventCard**: Display upcoming shows and events
+3. **SocialLinks**: Consistent social media integration
+4. **NewsletterSignup**: Email collection component
+5. **ImageGallery**: Responsive photo gallery
+6. **ContactForm**: Simple contact form with validation
+
+## Performance Targets
+- **Core Web Vitals**: LCP < 2.5s, FID < 100ms, CLS < 0.1
+- **Lighthouse Score**: 90+ in all categories
+- **Bundle Size**: Keep main bundle under 200KB
+- **Load Time**: First contentful paint under 1.5s
+
+## Content Strategy
+- Prioritize latest music and upcoming shows on homepage
+- Make social media links prominent
+- Include professional press photos
+- Implement easy sharing functionality
+- Consider fan engagement features (newsletter, exclusive content)
+
+Always preserve Atlas structure and functionality. Only changing support from video files to audio files. 

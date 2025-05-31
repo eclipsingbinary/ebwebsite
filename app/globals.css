@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Spin Cycle Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@font-face {
+  font-family: 'Spin Cycle';
+  src: url('/fonts/SpinCycle.ttf') format('truetype');
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+}
+
+/* Custom font classes */
+.font-spincycle {
+  font-family: 'Spin Cycle', 'Orbitron', monospace, sans-serif;
+}
+
+.font-header {
+  font-family: 'Spin Cycle', 'Orbitron', monospace, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Cosmic glow effect for header */
+.text-cosmic-glow {
+  text-shadow: 
+    0 0 10px rgba(147, 51, 234, 0.5),
+    0 0 20px rgba(147, 51, 234, 0.3),
+    0 0 30px rgba(147, 51, 234, 0.2),
+    0 0 40px rgba(56, 189, 248, 0.1);
+  filter: drop-shadow(0 0 8px rgba(147, 51, 234, 0.3));
+}
+
+/* Subtle glow for tagline */
+.text-subtle-glow {
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 16px rgba(147, 51, 234, 0.2),
+    0 0 24px rgba(56, 189, 248, 0.1);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
+}
+
+/* Glass-like background for tagline */
+.text-glass-bg {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Cosmic floating buttons */
+.cosmic-button {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.1);
+}
+
+.cosmic-button:hover {
+  background: rgba(147, 51, 234, 0.2);
+  border-color: rgba(147, 51, 234, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(147, 51, 234, 0.2),
+    0 0 16px rgba(147, 51, 234, 0.3);
+  text-shadow: 0 0 8px rgba(147, 51, 234, 0.5);
+}
+
+/* Music platform buttons - primary style */
+.music-button {
+  background: rgba(147, 51, 234, 0.2);
+  border: 1px solid rgba(147, 51, 234, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 14px 28px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.2);
+}
+
+.music-button:hover {
+  background: rgba(147, 51, 234, 0.4);
+  border-color: rgba(147, 51, 234, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 32px rgba(147, 51, 234, 0.3),
+    0 0 20px rgba(147, 51, 234, 0.4);
+  text-shadow: 0 0 12px rgba(147, 51, 234, 0.6);
+}
+
+/* Social button alternative colors */
+.social-button-cyan {
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.1);
+}
+
+.social-button-cyan:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 
+    0 8px 24px rgba(56, 189, 248, 0.2),
+    0 0 16px rgba(56, 189, 248, 0.3);
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+/* GIF Background Classes */
+.gif-background {
+  background-image: url('/images/background.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Fallback gradient if GIF doesn't load */
+.gif-background-fallback {
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+}
+
+/* Text shadow for better readability over GIF */
+.text-shadow-strong {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-medium {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth animations */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for audio players and content areas */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-foreground;
+}
+
+/* Audio player custom styles */
+audio {
+  width: 100%;
+  height: 40px;
+}
+
+audio::-webkit-media-controls-panel {
+  @apply bg-secondary;
+}
+
+/* Smooth animations for page transitions */
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Focus styles for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+/* Cosmic Glow Effect for Header */
+.cosmic-glow {
+  text-shadow: 
+    0 0 10px #a855f7,
+    0 0 20px #a855f7,
+    0 0 30px #a855f7,
+    0 0 40px #06b6d4,
+    0 0 70px #06b6d4,
+    0 0 80px #06b6d4,
+    0 0 100px #06b6d4;
+}
+
+/* Slow spinning animation for orbital rings */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow linear infinite;
+}
+
+/* Custom Tailwind utilities */
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+} 
