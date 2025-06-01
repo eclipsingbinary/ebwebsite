@@ -1,6 +1,6 @@
 export const artistInfo = {
   name: 'Eclipsing Binary',
-  tagline: 'Traversing space and time singing about the cosmos, society and love',
+  tagline: 'Singing about the cosmos, society and love',
   bio: 'Eclipsing Binary creates immersive electronic soundscapes that blend ambient textures with experimental beats. Drawing inspiration from cosmic phenomena and digital landscapes, each track is a journey through sound and space.',
   location: 'Digital Realm',
   email: 'contact@eclipsingbinary.net',

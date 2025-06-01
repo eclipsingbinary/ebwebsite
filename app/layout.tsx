@@ -4,7 +4,7 @@ import CosmicNavigation from '@/components/CosmicNavigation'
 
 export const metadata: Metadata = {
   title: 'Eclipsing Binary - Traversing space and time singing about the cosmos, society and love',
-  description: 'Electronic music artist exploring cosmic themes through immersive soundscapes. Space and Tech meets Spiritual and Ancient in a musical journey across the universe.',
+  description: 'Singing about the cosmos, society and love. Space and Tech meets Spiritual and Ancient in a musical journey across the universe.',
   keywords: ['electronic music', 'ambient', 'cosmic', 'space music', 'experimental', 'eclipsing binary'],
   authors: [{ name: 'Eclipsing Binary' }],
   creator: 'Eclipsing Binary',
@@ -17,14 +17,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://eclipsingbinary.net',
-    title: 'Eclipsing Binary - Cosmic Electronic Music',
-    description: 'Traversing space and time singing about the cosmos, society and love',
+    title: 'Eclipsing Binary',
+    description: 'Singing about the cosmos, society and love',
     siteName: 'Eclipsing Binary',
+    images: [
+      {
+        url: '/images/eclipsing-binary-og.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Eclipsing Binary - Cosmic Music Artist',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eclipsing Binary - Cosmic Electronic Music',
-    description: 'Traversing space and time singing about the cosmos, society and love',
+    title: 'Eclipsing Binary',
+    description: 'Singing about the cosmos, society and love',
+    images: ['/images/eclipsing-binary-og.svg'],
   },
   robots: {
     index: true,
@@ -37,6 +46,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Eclipsing Binary",
+    "description": "Singing about the cosmos, society and love",
+    "url": "https://eclipsingbinary.net",
+    "genre": ["Electronic", "Ambient", "Cosmic"],
+    "image": "https://eclipsingbinary.net/images/eclipsing-binary-og.svg",
+    "sameAs": [
+      "https://app.t2.world/u/eclipsingbinary",
+      "https://spinamp.xyz/artist/eclipsing-binary"
+    ]
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -47,6 +70,14 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
           rel="stylesheet"
+        />
+        <link rel="icon" type="image/svg+xml" href="/images/eclipsing-binary-og.svg" />
+        <meta name="theme-color" content="#000011" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
         />
       </head>
       <body className="antialiased bg-black text-white min-h-screen">
