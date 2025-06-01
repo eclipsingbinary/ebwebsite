@@ -1,0 +1,90 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#000022"/>
+  
+  <!-- Star field background -->
+  <g opacity="0.7">
+    <circle cx="100" cy="80" r="1.5" fill="#ffffff"/>
+    <circle cx="1050" cy="120" r="2" fill="#ccddff"/>
+    <circle cx="200" cy="180" r="1" fill="#ffddcc"/>
+    <circle cx="950" cy="220" r="1.5" fill="#ffffff"/>
+    <circle cx="150" cy="300" r="2" fill="#ddffcc"/>
+    <circle cx="1100" cy="350" r="1" fill="#ffffff"/>
+    <circle cx="80" cy="450" r="1.5" fill="#ccddff"/>
+    <circle cx="1000" cy="480" r="2" fill="#ffddcc"/>
+    <circle cx="180" cy="550" r="1" fill="#ffffff"/>
+    <circle cx="920" cy="580" r="1.5" fill="#ccddff"/>
+    <circle cx="300" cy="90" r="1" fill="#ffffff"/>
+    <circle cx="800" cy="100" r="2" fill="#ddffcc"/>
+    <circle cx="400" cy="160" r="1.5" fill="#ccddff"/>
+    <circle cx="700" cy="200" r="1" fill="#ffffff"/>
+    <circle cx="350" cy="280" r="2" fill="#ffddcc"/>
+    <circle cx="750" cy="320" r="1" fill="#ffffff"/>
+    <circle cx="320" cy="420" r="1.5" fill="#ccddff"/>
+    <circle cx="780" cy="460" r="2" fill="#ddffcc"/>
+    <circle cx="380" cy="520" r="1" fill="#ffffff"/>
+    <circle cx="720" cy="570" r="1.5" fill="#ccddff"/>
+  </g>
+  
+  <!-- Central eclipsing binary system -->
+  <g transform="translate(600, 315)">
+    <!-- Primary star (larger, cooler) - Orange/Red -->
+    <circle cx="-60" cy="0" r="50" fill="#ff6622" opacity="0.3"/>
+    <circle cx="-60" cy="0" r="45" fill="#ff8844" opacity="0.9"/>
+    <circle cx="-60" cy="0" r="35" fill="#ffaa66" opacity="0.6"/>
+    
+    <!-- Secondary star (smaller, hotter) - Blue -->
+    <circle cx="40" cy="0" r="30" fill="#4488ff" opacity="0.4"/>
+    <circle cx="40" cy="0" r="25" fill="#66aaff" opacity="0.95"/>
+    <circle cx="40" cy="0" r="18" fill="#88ccff" opacity="0.7"/>
+    
+    <!-- Orbital path indication -->
+    <ellipse cx="0" cy="0" rx="80" ry="15" fill="none" stroke="#666699" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+    
+    <!-- Gravitational interaction lines -->
+    <line x1="-60" y1="0" x2="40" y2="0" stroke="#aa88ff" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Eclipse effect -->
+    <ellipse cx="10" cy="0" rx="35" ry="35" fill="#000022" opacity="0.6"/>
+  </g>
+  
+  <!-- Constellation lines -->
+  <g stroke="#445566" stroke-width="1.5" opacity="0.4">
+    <line x1="100" y1="80" x2="200" y2="180"/>
+    <line x1="200" y1="180" x2="150" y2="300"/>
+    <line x1="1050" y1="120" x2="950" y2="220"/>
+    <line x1="950" y1="220" x2="1100" y2="350"/>
+  </g>
+  
+  <!-- Main title -->
+  <text x="600" y="150" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#000" stroke-width="1">
+    Eclipsing Binary
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="36" text-anchor="middle" fill="#aaccff">
+    Singing about the cosmos, society and love
+  </text>
+  
+  <!-- Website -->
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#888aaa">
+    eclipsingbinary.net
+  </text>
+  
+  <!-- Nebula effects -->
+  <defs>
+    <radialGradient id="nebula1" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#6644aa;stop-opacity:0.3"/>
+      <stop offset="70%" style="stop-color:#3322aa;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#000044;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="70%" cy="70%">
+      <stop offset="0%" style="stop-color:#aa4466;stop-opacity:0.2"/>
+      <stop offset="70%" style="stop-color:#aa2233;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#440022;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="200" cy="200" r="150" fill="url(#nebula1)"/>
+  <circle cx="1000" cy="400" r="180" fill="url(#nebula2)"/>
+</svg> 

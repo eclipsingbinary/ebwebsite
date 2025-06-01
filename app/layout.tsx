@@ -22,10 +22,11 @@ export const metadata: Metadata = {
     siteName: 'Eclipsing Binary',
     images: [
       {
-        url: '/images/eclipsing-binary-og.svg',
+        url: 'https://eclipsingbinary.net/images/eclipsing-binary-og-static.svg',
         width: 1200,
         height: 630,
         alt: 'Eclipsing Binary - Cosmic Music Artist',
+        type: 'image/svg+xml',
       },
     ],
   },
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Eclipsing Binary',
     description: 'Singing about the cosmos, society and love',
-    images: ['/images/eclipsing-binary-og.svg'],
+    images: ['https://eclipsingbinary.net/images/eclipsing-binary-og-static.svg'],
   },
   robots: {
     index: true,
