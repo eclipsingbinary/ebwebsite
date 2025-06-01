@@ -4,13 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Music', href: '/music' },
-  { name: 'Videos', href: '/videos' },
-  { name: 'Writings', href: '/writings' }
-]
+import { navigation } from '@/lib/data'
 
 export default function CosmicNavigation() {
   const pathname = usePathname()

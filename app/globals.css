@@ -11,6 +11,9 @@
   font-display: swap;
 }
 
+/* Remove the @font-face for Spin Cycle since the file doesn't exist */
+/* Use Audiowide as the primary cosmic header font - it has great mobile support */
+
 @layer base {
   :root {
     --foreground-rgb: 0, 0, 0;
@@ -48,6 +51,12 @@
 
 .font-header {
   font-family: 'Spin Cycle', 'Orbitron', monospace, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Cosmic header font class for consistent usage */
+.font-cosmic {
+  font-family: 'Audiowide', 'Orbitron', 'Exo 2', monospace, sans-serif;
   letter-spacing: 0.05em;
 }
 
@@ -215,16 +224,29 @@ audio::-webkit-media-controls-panel {
   @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
 }
 
-/* Cosmic Glow Effect for Header */
-.cosmic-glow {
-  text-shadow: 
-    0 0 10px #a855f7,
-    0 0 20px #a855f7,
-    0 0 30px #a855f7,
-    0 0 40px #06b6d4,
-    0 0 70px #06b6d4,
-    0 0 80px #06b6d4,
-    0 0 100px #06b6d4;
+/* Enhanced Cosmic Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes shooting-star {
+  0% { opacity: 0; transform: translateX(-100px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(200px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 6s ease-in-out infinite;
 }
 
 /* Slow spinning animation for orbital rings */
@@ -239,6 +261,20 @@ audio::-webkit-media-controls-panel {
 
 .animate-spin-slow {
   animation: spin-slow linear infinite;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Enhanced cosmic glow */
+.cosmic-glow {
+  text-shadow: 
+    0 0 10px rgba(56, 189, 248, 0.8),
+    0 0 20px rgba(147, 51, 234, 0.6),
+    0 0 30px rgba(236, 72, 153, 0.4),
+    0 0 40px rgba(16, 185, 129, 0.2);
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.5));
 }
 
 /* Custom Tailwind utilities */

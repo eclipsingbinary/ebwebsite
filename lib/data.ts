@@ -30,7 +30,7 @@ export const socialLinks = [
     type: 'social'
   },
   {
-    name: 'Hey.xyz',
+    name: 'Hey',
     url: 'https://hey.xyz/u/eclipsingbinary',
     icon: 'globe',
     description: 'Connect on Hey.xyz',
@@ -104,4 +104,5 @@ export const navigation = [
   { name: 'Music', href: '/music' },
   { name: 'Videos', href: '/videos' },
   { name: 'Writings', href: '/writings' }
+  // { name: 'Live', href: '/live' } // Hidden during development
 ] 
