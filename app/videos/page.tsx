@@ -282,6 +282,16 @@ export default function VideosPage() {
     setCurrentVideoIndex(index)
   }
 
+  const getPrevVideo = () => {
+    const prevIndex = (currentVideoIndex - 1 + musicVideos.length) % musicVideos.length
+    return musicVideos[prevIndex]
+  }
+
+  const getNextVideo = () => {
+    const nextIndex = (currentVideoIndex + 1) % musicVideos.length
+    return musicVideos[nextIndex]
+  }
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Cosmic Background */}
@@ -307,20 +317,28 @@ export default function VideosPage() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 py-16">
         {/* Enhanced Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <div className="relative">
-            {/* Multiple glow layers for depth */}
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-sm opacity-50">
+            {/* Enhanced Multiple glow layers for depth */}
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-2xl opacity-60 animate-pulse">
               visual cosmos NFTs
             </h1>
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30">
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-xl opacity-50 animate-pulse" style={{animationDelay: '1s'}}>
               visual cosmos NFTs
             </h1>
-            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl">
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-300 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-lg opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}>
               visual cosmos NFTs
-          </h1>
+            </h1>
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-pink-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30 animate-pulse" style={{animationDelay: '1.5s'}}>
+              visual cosmos NFTs
+            </h1>
+            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl" style={{
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(96, 165, 250, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)'
+            }}>
+              visual cosmos NFTs
+            </h1>
             
             {/* Constellation stars around title */}
             <div className="absolute -top-4 -left-4 w-2 h-2 bg-cyan-300 rounded-full animate-twinkle opacity-80" />
@@ -333,122 +351,159 @@ export default function VideosPage() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto font-light italic mb-4 drop-shadow-lg">
               The essence, the light. Immaterial, intangible.
             </p>
-            {/* Subtle glow behind tagline */}
-            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-sm opacity-20">
+            {/* Enhanced glow behind tagline */}
+            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-lg opacity-30 animate-pulse">
+              The essence, the light. Immaterial, intangible.
+            </div>
+            <div className="absolute inset-0 text-xl text-purple-400 max-w-3xl mx-auto font-light italic blur-md opacity-20 animate-pulse" style={{animationDelay: '1s'}}>
               The essence, the light. Immaterial, intangible.
             </div>
           </div>
         </div>
 
-        {/* Video Player Interface */}
-        <div className="max-w-5xl mx-auto">
-          {/* Main Video Player - Full Width */}
-          <div className="w-full">
-            <div className="group relative bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30 backdrop-blur-xl border-2 border-purple-400/20 rounded-3xl p-8 hover:border-purple-300/40 transition-all duration-500 shadow-xl shadow-purple-500/10">
-              {/* Enhanced cosmic effects */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-400/10 via-cyan-400/10 to-pink-400/10 rounded-3xl blur-sm" />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/3 to-transparent rounded-3xl" />
-              
-              {/* Dynamic sparkles */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-purple-300 rounded-full animate-twinkle opacity-80" />
-              <div className="absolute top-8 right-12 w-1 h-1 bg-cyan-300 rounded-full animate-twinkle opacity-60" style={{animationDelay: '1s'}} />
-              <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-pink-300 rounded-full animate-twinkle opacity-70" style={{animationDelay: '0.5s'}} />
-              <div className="absolute bottom-12 left-12 w-1 h-1 bg-emerald-300 rounded-full animate-twinkle opacity-50" style={{animationDelay: '1.5s'}} />
-              
-              {/* NFT Badge */}
-              <div className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600/90 to-amber-500/90 backdrop-blur-md rounded-lg border border-amber-400/60 shadow-lg shadow-amber-500/30">
-                <Sparkles className="w-5 h-5 text-amber-200 animate-twinkle" />
-                <span className="text-base font-bold text-amber-100 drop-shadow-sm">NFT</span>
-              </div>
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevVideo}
-                className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-gradient-to-r from-purple-600/80 to-cyan-600/80 backdrop-blur-md rounded-full border-2 border-purple-400/60 flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 hover:from-purple-500/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg shadow-purple-500/30"
-              >
-                <ChevronLeft className="w-7 h-7 text-white" />
-              </button>
-
-              <button
-                onClick={nextVideo}
-                className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-gradient-to-r from-purple-600/80 to-cyan-600/80 backdrop-blur-md rounded-full border-2 border-purple-400/60 flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 hover:from-purple-500/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg shadow-purple-500/30"
-              >
-                <ChevronRight className="w-7 h-7 text-white" />
-              </button>
-
-              {/* Main Video Player */}
-              <div className="relative aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-2xl mb-8 flex items-center justify-center border-2 border-white/10 overflow-hidden group-hover:border-white/20 transition-colors duration-500">
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 rounded-2xl blur-sm" />
-                
-                {currentVideo.embedCode ? (
+        {/* Gleev-Style Full Width Video Carousel */}
+        <div className="relative w-full overflow-hidden">
+          {/* Video Carousel Container - Gleev Style */}
+          <div className="relative flex items-center justify-center h-auto">
+            {/* Previous Video (Partial View - Same Height) */}
+            <div className="absolute left-0 z-10 w-80 md:w-96 transform -translate-x-1/2 opacity-60 hover:opacity-80 transition-opacity duration-300">
+              <div className="aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-lg overflow-hidden border border-white/10">
+                {getPrevVideo().embedCode ? (
                   <div 
-                    key={currentVideo.id} // Force re-render when video changes
-                    className="relative w-full h-full rounded-xl overflow-hidden"
-                    dangerouslySetInnerHTML={{ __html: currentVideo.embedCode }}
+                    className="w-full h-full rounded-lg overflow-hidden cursor-pointer"
+                    onClick={() => prevVideo()}
+                    dangerouslySetInnerHTML={{ __html: getPrevVideo().embedCode }}
                   />
                 ) : (
-                  <div className="relative flex flex-col items-center text-white/60">
-                    <Video className="w-12 h-12 mb-2" />
-                    <span className="text-sm">Video embed coming soon</span>
+                  <div className="flex items-center justify-center text-white/60 h-full">
+                    <Video className="w-8 h-8" />
                   </div>
                 )}
               </div>
-              
-              {/* Current Video Info */}
-              <div className="relative space-y-6">
-                <div className="mb-4">
-                  <h3 className="text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">
-                    {currentVideo.title}
-                  </h3>
+            </div>
+
+            {/* Next Video (Partial View - Same Height) */}
+            <div className="absolute right-0 z-10 w-80 md:w-96 transform translate-x-1/2 opacity-60 hover:opacity-80 transition-opacity duration-300">
+              <div className="aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-lg overflow-hidden border border-white/10">
+                {getNextVideo().embedCode ? (
+                  <div 
+                    className="w-full h-full rounded-lg overflow-hidden cursor-pointer"
+                    onClick={() => nextVideo()}
+                    dangerouslySetInnerHTML={{ __html: getNextVideo().embedCode }}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center text-white/60 h-full">
+                    <Video className="w-8 h-8" />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Main Current Video - Medium Size Center */}
+            <div className="relative z-20 w-full max-w-2xl md:max-w-4xl mx-auto px-4">
+              <div className="relative">
+                {/* NFT Badge */}
+                <div className="absolute top-4 left-4 z-30 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600/90 to-amber-500/90 backdrop-blur-md rounded-lg border border-amber-400/60 shadow-lg shadow-amber-500/30">
+                  <Sparkles className="w-5 h-5 text-amber-200 animate-twinkle" />
+                  <span className="text-base font-bold text-amber-100 drop-shadow-sm">NFT</span>
                 </div>
-                
-                <p className="text-base text-gray-200 leading-relaxed drop-shadow-sm max-w-4xl">
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevVideo}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-purple-600/80 to-cyan-600/80 backdrop-blur-md rounded-full border-2 border-purple-400/60 flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 hover:from-purple-500/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg shadow-purple-500/30"
+                >
+                  <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                </button>
+
+                <button
+                  onClick={nextVideo}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-purple-600/80 to-cyan-600/80 backdrop-blur-md rounded-full border-2 border-purple-400/60 flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 hover:from-purple-500/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg shadow-purple-500/30"
+                >
+                  <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                </button>
+
+                {/* Main Video Player - Medium Size */}
+                <div className="relative aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl shadow-purple-500/20">
+                  {currentVideo.embedCode ? (
+                    <div 
+                      key={currentVideo.id}
+                      className="w-full h-full rounded-2xl overflow-hidden"
+                      dangerouslySetInnerHTML={{ __html: currentVideo.embedCode }}
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center text-white/60 h-full">
+                      <Video className="w-12 h-12 mb-2" />
+                      <span className="text-sm">Video embed coming soon</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Video Information Below - Contained */}
+          <div className="max-w-4xl mx-auto px-4 mt-8">
+            <div className="space-y-6">
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-md">
+                  {currentVideo.title}
+                </h3>
+                <p className="text-base text-gray-200 leading-relaxed drop-shadow-sm">
                   {currentVideo.description}
                 </p>
-                
-                {/* Enhanced Collect on Gleev Link */}
-                {currentVideo.gleevUrl && (
-                  <div className="pt-4">
-            <Link
-                      href={currentVideo.gleevUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center gap-3 px-8 py-4 text-base bg-gradient-to-r from-purple-600/60 to-cyan-600/60 hover:from-purple-500/80 hover:to-cyan-500/80 text-purple-200 rounded-lg transition-all duration-300 border border-purple-400/40 hover:border-purple-300/60 shadow-lg shadow-purple-500/20 hover:scale-105"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg" />
-                      {/* Gleev Logo */}
-                      <div className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300">
-                        <Image
-                          src="/images/logos/gleev.svg"
-                          alt="Gleev"
-                          width={20}
-                          height={20}
-                          className="w-full h-full"
-                        />
-                      </div>
-                      <span className="relative">Collect on Gleev</span>
-                      <ExternalLink className="w-4 h-4 opacity-60 group-hover/btn:opacity-100 transition-opacity duration-300" />
-            </Link>
-                  </div>
-                )}
               </div>
+              
+              {/* Enhanced Collect on Gleev Link */}
+              {currentVideo.gleevUrl && (
+                <div className="flex justify-center pt-4">
+                  <Link
+                    href={currentVideo.gleevUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn inline-flex items-center gap-3 px-8 py-4 text-base bg-gradient-to-r from-purple-600/60 to-cyan-600/60 hover:from-purple-500/80 hover:to-cyan-500/80 text-purple-200 rounded-lg transition-all duration-300 border border-purple-400/40 hover:border-purple-300/60 shadow-lg shadow-purple-500/20 hover:scale-105"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg" />
+                    {/* Gleev Logo */}
+                    <div className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300">
+                      <Image
+                        src="/images/logos/gleev.svg"
+                        alt="Gleev"
+                        width={20}
+                        height={20}
+                        className="w-full h-full"
+                      />
+                    </div>
+                    <span className="relative">Collect on Gleev</span>
+                    <ExternalLink className="w-4 h-4 opacity-60 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* NFT Shorts Section */}
-        <div className="mt-24 max-w-7xl mx-auto">
+        <div className="mt-24 max-w-7xl mx-auto px-4">
           {/* Enhanced Section Header */}
           <div className="text-center mb-16">
             <div className="relative">
-              {/* Multiple glow layers for depth */}
-              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-sm opacity-50">
+              {/* Enhanced Multiple glow layers for depth */}
+              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-2xl opacity-60 animate-pulse">
                 nft shorts
               </h2>
-              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30">
+              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-xl opacity-50 animate-pulse" style={{animationDelay: '1s'}}>
                 nft shorts
               </h2>
-              <h2 className="relative text-3xl md:text-5xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl">
+              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-cyan-300 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-lg opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}>
+                nft shorts
+              </h2>
+              <h2 className="absolute inset-0 text-3xl md:text-5xl font-bold text-pink-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30 animate-pulse" style={{animationDelay: '1.5s'}}>
+                nft shorts
+              </h2>
+              <h2 className="relative text-3xl md:text-5xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl" style={{
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(96, 165, 250, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)'
+              }}>
                 nft shorts
               </h2>
               
@@ -463,8 +518,11 @@ export default function VideosPage() {
               <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light italic drop-shadow-lg">
                 Bite-sized cosmic visions and experimental shorts
               </p>
-              {/* Subtle glow behind tagline */}
-              <div className="absolute inset-0 text-lg text-cyan-400 max-w-2xl mx-auto font-light italic blur-sm opacity-20">
+              {/* Enhanced glow behind tagline */}
+              <div className="absolute inset-0 text-lg text-cyan-400 max-w-2xl mx-auto font-light italic blur-lg opacity-30 animate-pulse">
+                Bite-sized cosmic visions and experimental shorts
+              </div>
+              <div className="absolute inset-0 text-lg text-purple-400 max-w-2xl mx-auto font-light italic blur-md opacity-20 animate-pulse" style={{animationDelay: '1s'}}>
                 Bite-sized cosmic visions and experimental shorts
               </div>
             </div>
@@ -489,7 +547,7 @@ export default function VideosPage() {
                 <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-600/90 to-amber-500/90 backdrop-blur-md rounded-md border border-amber-400/60 shadow-lg shadow-amber-500/30">
                   <Sparkles className="w-4 h-4 text-amber-200 animate-twinkle" />
                   <span className="text-sm font-bold text-amber-100 drop-shadow-sm">NFT</span>
-                  </div>
+                </div>
 
                 {/* Video Player */}
                 <div className="relative aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-xl mb-6 flex items-center justify-center border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors duration-500">
@@ -513,13 +571,13 @@ export default function VideosPage() {
                 <div className="relative space-y-4">
                   <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors drop-shadow-md line-clamp-2">
                     {short.title}
-                    </h3>
+                  </h3>
                   
                   {/* Enhanced Collect Button */}
-                      <Link
+                  <Link
                     href={short.gleevUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/btn inline-flex items-center gap-2 px-5 py-3 text-sm bg-gradient-to-r from-purple-600/60 to-cyan-600/60 hover:from-purple-500/80 hover:to-cyan-500/80 text-purple-200 rounded-md transition-all duration-300 border border-purple-400/40 hover:border-purple-300/60 shadow-lg shadow-purple-500/20 hover:scale-105 w-full justify-center"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-md" />
@@ -539,8 +597,8 @@ export default function VideosPage() {
                 </div>
               </div>
             ))}
-            </div>
           </div>
+        </div>
       </div>
 
       {/* Dramatically Enhanced Cosmic Atmosphere */}

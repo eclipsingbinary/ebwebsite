@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     siteName: 'Eclipsing Binary',
     images: [
       {
-        url: 'https://eclipsingbinary.net/images/eclipsing-binary-og-static.svg',
+        url: 'https://eclipsingbinary.net/images/logos/eclipsingbinary-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Eclipsing Binary - Cosmic Music Artist',
-        type: 'image/svg+xml',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Eclipsing Binary',
     description: 'Singing about the cosmos, society and love',
-    images: ['https://eclipsingbinary.net/images/eclipsing-binary-og-static.svg'],
+    images: ['https://eclipsingbinary.net/images/logos/eclipsingbinary-logo.jpg'],
   },
   robots: {
     index: true,
@@ -54,7 +54,7 @@ export default function RootLayout({
     "description": "Singing about the cosmos, society and love",
     "url": "https://eclipsingbinary.net",
     "genre": ["Electronic", "Ambient", "Cosmic"],
-    "image": "https://eclipsingbinary.net/images/eclipsing-binary-og.svg",
+    "image": "https://eclipsingbinary.net/images/logos/eclipsingbinary-logo.jpg",
     "sameAs": [
       "https://app.t2.world/u/eclipsingbinary",
       "https://spinamp.xyz/artist/eclipsing-binary"
@@ -72,7 +72,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/svg+xml" href="/images/eclipsing-binary-og.svg" />
+        <link rel="icon" type="image/jpeg" href="/images/logos/eclipsingbinary-logo.jpg" />
         <meta name="theme-color" content="#000011" />
         <script
           type="application/ld+json"

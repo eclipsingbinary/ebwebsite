@@ -171,14 +171,22 @@ export default function WritingsPage() {
         {/* Enhanced Header */}
         <div className="text-center mb-16">
           <div className="relative">
-            {/* Multiple glow layers for depth */}
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-sm opacity-50">
+            {/* Enhanced Multiple glow layers for depth */}
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-2xl opacity-60 animate-pulse">
               inner thoughts
             </h1>
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30">
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-xl opacity-50 animate-pulse" style={{animationDelay: '1s'}}>
               inner thoughts
             </h1>
-            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl">
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-300 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-lg opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}>
+              inner thoughts
+            </h1>
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-pink-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30 animate-pulse" style={{animationDelay: '1.5s'}}>
+              inner thoughts
+            </h1>
+            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl" style={{
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(96, 165, 250, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)'
+            }}>
               inner thoughts
             </h1>
             
@@ -193,8 +201,11 @@ export default function WritingsPage() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto font-light italic mb-4 drop-shadow-lg">
               "A cathedral without the art is just a building"
             </p>
-            {/* Subtle glow behind tagline */}
-            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-sm opacity-20">
+            {/* Enhanced glow behind tagline */}
+            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-lg opacity-30 animate-pulse">
+              "A cathedral without the art is just a building"
+            </div>
+            <div className="absolute inset-0 text-xl text-purple-400 max-w-3xl mx-auto font-light italic blur-md opacity-20 animate-pulse" style={{animationDelay: '1s'}}>
               "A cathedral without the art is just a building"
             </div>
           </div>

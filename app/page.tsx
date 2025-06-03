@@ -49,16 +49,24 @@ export default function HomePage() {
       <div className="relative z-10 text-center space-y-8 px-4 pb-20 sm:pb-24 lg:pb-32">
         {/* Main Title with Enhanced Cosmic Glow */}
         <div className="relative">
-          {/* Multiple glow layers for depth */}
-          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-cyan-400 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-sm opacity-50">
+          {/* Enhanced Multiple glow layers for depth */}
+          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-cyan-400 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-2xl opacity-60 animate-pulse">
             {artistInfo.name}
           </h1>
-          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-purple-400 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30">
+          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-purple-400 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-xl opacity-50 animate-pulse" style={{animationDelay: '1s'}}>
             {artistInfo.name}
           </h1>
-          <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl">
-          {artistInfo.name}
-        </h1>
+          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-cyan-300 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-lg opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}>
+            {artistInfo.name}
+          </h1>
+          <h1 className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-bold text-pink-400 mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30 animate-pulse" style={{animationDelay: '1.5s'}}>
+            {artistInfo.name}
+          </h1>
+          <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl" style={{
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(96, 165, 250, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)'
+          }}>
+            {artistInfo.name}
+          </h1>
           
           {/* Constellation stars around title */}
           <div className="absolute -top-4 -left-4 w-2 h-2 bg-cyan-300 rounded-full animate-twinkle opacity-80" />
@@ -70,10 +78,13 @@ export default function HomePage() {
         {/* Enhanced Tagline */}
         <div className="relative">
           <p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-2xl mx-auto font-light italic font-bold drop-shadow-lg">
-          {artistInfo.tagline}
-        </p>
-          {/* Subtle glow behind tagline */}
-          <div className="absolute inset-0 text-lg md:text-xl lg:text-2xl text-cyan-400 max-w-2xl mx-auto font-light italic font-bold blur-sm opacity-20">
+            {artistInfo.tagline}
+          </p>
+          {/* Enhanced glow behind tagline */}
+          <div className="absolute inset-0 text-lg md:text-xl lg:text-2xl text-cyan-400 max-w-2xl mx-auto font-light italic font-bold blur-lg opacity-30 animate-pulse">
+            {artistInfo.tagline}
+          </div>
+          <div className="absolute inset-0 text-lg md:text-xl lg:text-2xl text-purple-400 max-w-2xl mx-auto font-light italic font-bold blur-md opacity-20 animate-pulse" style={{animationDelay: '1s'}}>
             {artistInfo.tagline}
           </div>
         </div>

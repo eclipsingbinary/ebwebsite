@@ -108,16 +108,24 @@ export default function MusicPage() {
         {/* Enhanced Header */}
         <div className="text-center mb-16">
           <div className="relative">
-            {/* Multiple glow layers for depth */}
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-sm opacity-50">
+            {/* Enhanced Multiple glow layers for depth */}
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-2xl opacity-60 animate-pulse">
               Musical Journey
             </h1>
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30">
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-purple-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-xl opacity-50 animate-pulse" style={{animationDelay: '1s'}}>
               Musical Journey
             </h1>
-            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl">
-            Musical Journey
-          </h1>
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-cyan-300 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-lg opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}>
+              Musical Journey
+            </h1>
+            <h1 className="absolute inset-0 text-4xl md:text-6xl font-bold text-pink-400 mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider blur-md opacity-30 animate-pulse" style={{animationDelay: '1.5s'}}>
+              Musical Journey
+            </h1>
+            <h1 className="relative text-4xl md:text-6xl font-bold text-white mb-6 font-['Spin_Cycle',_'Orbitron',_monospace] lowercase tracking-wider drop-shadow-2xl" style={{
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(96, 165, 250, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)'
+            }}>
+              Musical Journey
+            </h1>
             
             {/* Constellation stars around title */}
             <div className="absolute -top-4 -left-4 w-2 h-2 bg-cyan-300 rounded-full animate-twinkle opacity-80" />
@@ -130,8 +138,11 @@ export default function MusicPage() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto font-light italic drop-shadow-lg">
               Oneness with all the things
             </p>
-            {/* Subtle glow behind tagline */}
-            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-sm opacity-20">
+            {/* Enhanced glow behind tagline */}
+            <div className="absolute inset-0 text-xl text-cyan-400 max-w-3xl mx-auto font-light italic blur-lg opacity-30 animate-pulse">
+              Oneness with all the things
+            </div>
+            <div className="absolute inset-0 text-xl text-purple-400 max-w-3xl mx-auto font-light italic blur-md opacity-20 animate-pulse" style={{animationDelay: '1s'}}>
               Oneness with all the things
             </div>
           </div>
@@ -655,7 +666,7 @@ export default function MusicPage() {
                         
                         <div className="absolute inset-1 rounded-full bg-gradient-to-br from-white/10 via-emerald-300/5 to-green-300/5 group-hover/logo:from-white/20 group-hover/logo:via-emerald-300/10 group-hover/logo:to-green-300/10 transition-all duration-300" />
                         
-                  <Image
+                        <Image
                           src={platformLogos['Spotify']}
                           alt="Spotify"
                           width={24}
@@ -696,8 +707,8 @@ export default function MusicPage() {
                     <p className="text-sm text-gray-200 leading-relaxed drop-shadow-sm">
                       {release.description}
                     </p>
-              </div>
-              
+                  </div>
+                  
                   {/* 3. Platform Logos */}
                   <div className="flex justify-center gap-6">
                     {/* Spinamp Logo Link */}
