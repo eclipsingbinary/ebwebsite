@@ -218,7 +218,7 @@ export default function WritingsPage() {
               rel="noopener noreferrer"
               className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600/60 to-purple-600/60 border-2 border-indigo-400/60 rounded-full backdrop-blur-md hover:from-indigo-500/80 hover:to-purple-500/80 hover:border-indigo-300/80 transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-400/50 hover:scale-105"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full pointer-events-none" />
               {/* t2.world Logo */}
               <div className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 rounded-full overflow-hidden">
                 <img
@@ -239,7 +239,7 @@ export default function WritingsPage() {
             {writings.map((writing, index) => (
               <article
                 key={writing.id}
-                className="group relative bg-gradient-to-br from-cyan-900/30 via-indigo-900/30 to-purple-900/30 backdrop-blur-xl border-2 border-indigo-400/20 rounded-3xl p-8 hover:border-indigo-300/40 transition-all duration-500 hover:scale-[1.02] shadow-xl shadow-indigo-500/10"
+                className="group relative bg-gradient-to-br from-cyan-900/30 via-indigo-900/30 to-purple-900/30 backdrop-blur-xl border-2 border-indigo-400/20 rounded-3xl p-8 hover:border-indigo-300/40 transition-all duration-300 shadow-xl shadow-indigo-500/10"
               >
                 {/* Enhanced cosmic effects */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-400/10 via-purple-400/10 to-cyan-400/10 rounded-3xl blur-sm" />
@@ -253,19 +253,20 @@ export default function WritingsPage() {
                 
                 {/* Enhanced Writing Header */}
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors mb-3 drop-shadow-md">
+                  <h2 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-300 mb-3 drop-shadow-md">
                     {writing.title}
                   </h2>
                   
-                  <div className="flex items-center gap-4 text-sm text-gray-300">
+                  {/* Mobile-optimized metadata layout */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-gray-300">
                     {writing.readTime && (
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1 shrink-0">
                         <Clock className="w-3 h-3" />
                         {writing.readTime}
                       </span>
                     )}
                     {writing.tags && (
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {writing.tags.map((tag, i) => (
                           <span key={i} className="px-3 py-1.5 text-xs bg-indigo-600/40 text-indigo-200 rounded-lg border border-indigo-500/40 drop-shadow-sm">
                             {tag}
@@ -279,14 +280,14 @@ export default function WritingsPage() {
                 {/* Enhanced Writing Image */}
                 {writing.image && (
                   <div className="mb-6">
-                    <div className="relative aspect-video bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-white/20 transition-colors duration-500">
+                    <div className="relative aspect-video bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-white/20 transition-colors duration-300">
                       <div className="absolute -inset-1 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl blur-sm" />
                       <Image
                         src={writing.image}
                         alt={writing.title}
                         width={750}
                         height={422}
-                        className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="relative w-full h-full object-cover transition-transform duration-300"
                       />
                     </div>
                   </div>
@@ -308,7 +309,7 @@ export default function WritingsPage() {
                       rel="noopener noreferrer"
                       className="group/btn inline-flex items-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-indigo-600/60 to-purple-600/60 hover:from-indigo-500/80 hover:to-purple-500/80 text-indigo-200 rounded-lg transition-all duration-300 border border-indigo-500/40 hover:border-indigo-400/60 shadow-lg shadow-indigo-500/20 hover:scale-105"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg pointer-events-none" />
                       {/* t2.world Logo */}
                       <div className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300 rounded-full overflow-hidden">
                         <img
@@ -352,7 +353,7 @@ export default function WritingsPage() {
                   rel="noopener noreferrer"
                   className="group/btn inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600/60 to-purple-600/60 border-2 border-indigo-400/60 rounded-full backdrop-blur-md hover:from-indigo-500/80 hover:to-purple-500/80 hover:border-indigo-300/80 transition-all duration-300 text-white shadow-lg shadow-indigo-500/30 hover:scale-105"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full pointer-events-none" />
                   {/* t2.world Logo */}
                   <div className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300 rounded-full overflow-hidden">
                     <img

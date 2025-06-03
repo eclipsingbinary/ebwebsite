@@ -463,7 +463,7 @@ export default function VideosPage() {
                     rel="noopener noreferrer"
                     className="group/btn inline-flex items-center gap-3 px-8 py-4 text-base bg-gradient-to-r from-purple-600/60 to-cyan-600/60 hover:from-purple-500/80 hover:to-cyan-500/80 text-purple-200 rounded-lg transition-all duration-300 border border-purple-400/40 hover:border-purple-300/60 shadow-lg shadow-purple-500/20 hover:scale-105"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-lg pointer-events-none" />
                     {/* Gleev Logo */}
                     <div className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300">
                       <Image
@@ -533,7 +533,7 @@ export default function VideosPage() {
             {nftShorts.map((short, index) => (
               <div
                 key={short.id}
-                className="group relative bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30 backdrop-blur-xl border-2 border-purple-400/20 rounded-2xl p-6 hover:border-purple-300/40 transition-all duration-500 hover:scale-105 shadow-xl shadow-purple-500/10"
+                className="group relative bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30 backdrop-blur-xl border-2 border-purple-400/20 rounded-2xl p-6 hover:border-purple-300/40 transition-all duration-300 shadow-xl shadow-purple-500/10"
               >
                 {/* Enhanced cosmic effects */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-400/10 via-cyan-400/10 to-pink-400/10 rounded-2xl blur-sm" />
@@ -550,7 +550,7 @@ export default function VideosPage() {
                 </div>
 
                 {/* Video Player */}
-                <div className="relative aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-xl mb-6 flex items-center justify-center border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors duration-500">
+                <div className="relative aspect-video bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-xl mb-6 flex items-center justify-center border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors duration-300">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 rounded-xl blur-sm" />
                   
                   {/* Actual video embed */}
@@ -569,7 +569,7 @@ export default function VideosPage() {
                 
                 {/* Video Info */}
                 <div className="relative space-y-4">
-                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors drop-shadow-md line-clamp-2">
+                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-md line-clamp-2">
                     {short.title}
                   </h3>
                   
@@ -580,7 +580,7 @@ export default function VideosPage() {
                     rel="noopener noreferrer"
                     className="group/btn inline-flex items-center gap-2 px-5 py-3 text-sm bg-gradient-to-r from-purple-600/60 to-cyan-600/60 hover:from-purple-500/80 hover:to-cyan-500/80 text-purple-200 rounded-md transition-all duration-300 border border-purple-400/40 hover:border-purple-300/60 shadow-lg shadow-purple-500/20 hover:scale-105 w-full justify-center"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-md" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-md pointer-events-none" />
                     {/* Gleev Logo */}
                     <div className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300">
                       <Image
